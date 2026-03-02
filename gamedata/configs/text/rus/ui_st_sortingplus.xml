@@ -1,178 +1,238 @@
 <!-- 
-	Anomaly Modconfiguration Menu strings
-	
+	Anomaly Modconfiguration Menu strings	
 -->
-
 <string_table>
 	<string id="st_rax_fav">
-		<text>Отметить как избранное</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="st_rax_unfav">
-		<text>Снять отметку с избранного</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="st_rax_junk">
-		<text>Отметить Джанк</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="st_rax_unjunk">
-		<text>Снять отметку о мусоре</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
-
-
 	<string id="ui_mcm_title_SortingPlus">
-		<text>Сортировка Плюс</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ Sorting Plus</text>
 	</string>
-
 	<string id="ui_mcm_menu_SortingPlus">
-		<text>Сортировка Плюс</text>
+		<text>Sorting Plus</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_playerinv">
-		<text>Инвентарь игрока</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_playerinv_desc">
-		<text>Правая сторона на всех экранах кроме торговли.</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_playertrade">
-		<text>Инвентарь обмена игрока</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_playertrade_desc">
-		<text>Правая сторона инвентаря при торговле.</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_npcinv">
-		<text>Инвентарь NPC</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ NPC</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_npcinv_desc">
-		<text>Слева боковые инвторы на всех экранах, кроме торговли.</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_npctrade">
-		<text>Торговый инвентарь NPC</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_npctrade_desc">
-		<text>Левая сторона инвентаря при торговле.</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_useltx">
-		<text>использовать sortingplus.ltx</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ sortingplus.ltx</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_useltx_desc">
-		<text>Игнорирует настройки ниже в пользу тех, которые находятся в sortingpluse.ltx Ltx предлагает более детальный контроль.</text>
-	</string>
-	
-	<string id="ui_mcm_SortingPlus_iconjunk_desc">
-		<text>Пометьте Мусор значком.</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ sortingplus.ltx, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_iconjunk">
-		<text>Отметить Джанк</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>	  
 	</string>
-	
+	<string id="ui_mcm_SortingPlus_iconjunk_desc">
+		<text>пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
+	</string>
+									   
 	<string id="ui_mcm_SortingPlus_hilitejunk">
-		<text>Выделить «нежелательные»</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_hilitejunk_desc">
-		<text>выделите элементы, помеченные как «нежелательные».</text>
+		<text>пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_sortjunk">
-		<text>Используйте «нежелательные»</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_sortjunk_desc">
-		<text>Сортирует «нежелательные» элементы в свою категорию, по умолчанию последняя.</text>
+		<text>пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_selljunk">
-		<text>"Авто" Продажа «нежелательные»</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_selljunk_desc">
-		<text>«нежелательные» который покупает трейдер, будет помещен в панель продажи. Вам все равно нужно нажать кнопку продажи, чтобы завершить.</text>
+		<text>пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_iconfavs">
-		<text>Отметить избранное</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_iconfavs_desc">
-		<text>Отметьте избранное значком.</text>
+		<text>пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
-
-
 	<string id="ui_mcm_SortingPlus_hilitefavs">
-		<text>Выделите избранное</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_hilitefavs_desc">
-		<text>Выделите элементы, отмеченные как избранные.</text>
+		<text>пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_sortfavs">
-		<text>Использовать категорию избранного</text>
+		<text>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_sortfavs_desc">
-		<text>Сортируйте избранное по собственной категории, сначала по умолчанию.</text>
+		<text>пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_putallfavs">
-		<text>Блок «Поместить все» в избранное</text>
+		<text>пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ"  </text>
 	</string>
 	<string id="ui_mcm_SortingPlus_putallfavs_desc">
-		<text>Избранное не будет перемещено из вашего инвентаря, когда вы все перенесете.</text>
+		<text>пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ"</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_resort">
-		<text>Пересортировать при маркировке.</text>
+		<text>пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 	<string id="ui_mcm_SortingPlus_resort_desc">
-		<text>Инвентарь будет немедленно применен при пометке избранного / нежелательной почты. В противном случае ожидает следующего открытия инвентаря. Полезный отзыв, если подсветка отключена.</text>
-	</string>
-	
-	
-	
-	
-	
-	
-	
-	<string id="ui_mcm_SortingPlus_000favorites">
-		<text>Избранное</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_999junk">
-		<text>нежелательные</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_010weapons">
-		<text>Оружие</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_020outfits">
-		<text>Наряды</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_030artifacts">
-		<text>Артефакты</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_040devices">
-		<text>Устройства</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_050tools">
-		<text>Инструменты</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_060medical">
-		<text>Медицинское</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_070foods">
-		<text>Еда</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_080mutantfoods">
-		<text>Мутант Еда</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_090quest">
-		<text>Квестовые предметы</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_100notes">
-		<text>Примечания</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_110ammo">
-		<text>Боеприпасы</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_120mutantparts">
-		<text>Части мутантов</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_130misc">
-		<text>разное</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_140upgrades">
-		<text>Обновления</text>
-	</string>
-	<string id="ui_mcm_SortingPlus_150parts">
-		<text>Запчасти</text>
+		<text>пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</text>
 	</string>
 
+	<!-- Per-kind sort order labels -->
+	<string id="ui_mcm_SortingPlus_favskindrows">
+		<text>Favorites: Group by Kind</text>
+	</string>
+	<string id="ui_mcm_SortingPlus_favskindrows_desc">
+		<text>ON: favorites keep their kind row separation (weapons row, food row, etc.). OFF: all favorites share a single row, sorted by priority.</text>
+	</string>
+	<string id="ui_mcm_SortingPlus_usefunctors">
+		<text>Use Right-Click Functors</text>
+	</string>
+	<string id="ui_mcm_SortingPlus_usefunctors_desc">
+		<text>Enable right-click menu entries for marking Favorites/Junk.</text>
+	</string>
+	<string id="ui_mcm_SortingPlus_subkindprio">
+		<text>Within-Row Priority</text>
+	</string>
+	<string id="ui_mcm_SortingPlus_subkindprio_desc">
+		<text>Each category below has a sort number. The whole number sets the row group вЂ” categories with the same whole number share an inventory row (e.g. all weapons at 1). The decimal sets position within that row (e.g. 2.1 before 2.2). When this is OFF, decimals are ignored and all categories with the same whole number sort purely by item size.</text>
+	</string>
 
+	<!-- Group header titles -->
+	<string id="ui_mcm_SortingPlus_grp_special"><text>Special</text></string>
+	<string id="ui_mcm_SortingPlus_grp_weapons"><text>Weapons</text></string>
+	<string id="ui_mcm_SortingPlus_grp_outfits"><text>Outfits</text></string>
+	<string id="ui_mcm_SortingPlus_grp_belt"><text>Belt</text></string>
+	<string id="ui_mcm_SortingPlus_grp_equipment"><text>Equipment</text></string>
+	<string id="ui_mcm_SortingPlus_grp_consumables"><text>Consumables</text></string>
+	<string id="ui_mcm_SortingPlus_grp_quest"><text>Quest</text></string>
+	<string id="ui_mcm_SortingPlus_grp_ammo"><text>Ammo</text></string>
+	<string id="ui_mcm_SortingPlus_grp_mutant"><text>Mutant Loot</text></string>
+	<string id="ui_mcm_SortingPlus_grp_misc"><text>Miscellaneous</text></string>
+	<string id="ui_mcm_SortingPlus_grp_upgrades"><text>Upgrades</text></string>
+	<string id="ui_mcm_SortingPlus_grp_parts"><text>Parts</text></string>
+	<string id="ui_mcm_SortingPlus_grp_junk"><text>Junk</text></string>
+	<string id="ui_mcm_SortingPlus_grp_discovered"><text>Discovered</text></string>
 
-
+	<!-- Per-kind sort order labels -->
+	<string id="ui_mcm_SortingPlus_ko_favorites"><text>Favorites</text></string>
+	<string id="ui_mcm_SortingPlus_ko_favorites_desc"><text>Items marked as favorites via keybind or right-click.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_loadout"><text>ARM - Loadout</text></string>
+	<string id="ui_mcm_SortingPlus_ko_loadout_desc"><text>Magazines currently loaded in weapons (requires ARM).</text></string>
+	<string id="ui_mcm_SortingPlus_ko_mags"><text>ARM - Magazines</text></string>
+	<string id="ui_mcm_SortingPlus_ko_mags_desc"><text>Spare detachable magazines (requires ARM).</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_sniper"><text>Weapons - Sniper Rifles</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_sniper_desc"><text>Bolt-action and semi-auto sniper rifles (SVD, Mosin, etc.).</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_rifle"><text>Weapons - Rifles</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_rifle_desc"><text>Assault rifles and battle rifles (AK, M4, FAL, etc.).</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_smg"><text>Weapons - SMGs</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_smg_desc"><text>Submachine guns and PDWs (MP5, Vityaz, P90, etc.).</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_shotgun"><text>Weapons - Shotguns</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_shotgun_desc"><text>Pump-action, semi-auto, and break-action shotguns.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_pistol"><text>Weapons - Pistols</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_pistol_desc"><text>Handguns and revolvers (PM, Glock, Desert Eagle, etc.).</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_melee"><text>Weapons - Melee</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_melee_desc"><text>Knives, axes, and other melee weapons.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_misc"><text>Weapons - Miscellaneous</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_misc_desc"><text>Weapon attachments: scopes, sights, silencers, and other muzzle devices.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_base"><text>Weapons - Base</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_base_desc"><text>Grenade launchers, mounted weapons, and base weapon objects.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_explosive"><text>Weapons - Explosives</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_explosive_desc"><text>Hand grenades, mines, and other throwable explosives.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_o_armor"><text>Outfits - Armor</text></string>
+	<string id="ui_mcm_SortingPlus_ko_o_armor_desc"><text>Fallback for armor items not classified into a specific weight class.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_o_heavy"><text>Outfits - Heavy</text></string>
+	<string id="ui_mcm_SortingPlus_ko_o_heavy_desc"><text>Exoskeletons and heavy combat suits (Nosorog, SEVA-M, etc.).</text></string>
+	<string id="ui_mcm_SortingPlus_ko_o_sci"><text>Outfits - Scientific</text></string>
+	<string id="ui_mcm_SortingPlus_ko_o_sci_desc"><text>Scientific and anomaly-resistant suits (SEVA, SSP-99, Ecologist suits, etc.).</text></string>
+	<string id="ui_mcm_SortingPlus_ko_o_medium"><text>Outfits - Medium</text></string>
+	<string id="ui_mcm_SortingPlus_ko_o_medium_desc"><text>Mid-tier armored suits (Berill, CS-3a, Guardian, etc.).</text></string>
+	<string id="ui_mcm_SortingPlus_ko_o_light"><text>Outfits - Light</text></string>
+	<string id="ui_mcm_SortingPlus_ko_o_light_desc"><text>Leather jackets, trenchcoats, and light stalker suits.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_o_helmet"><text>Outfits - Helmets</text></string>
+	<string id="ui_mcm_SortingPlus_ko_o_helmet_desc"><text>Helmets, gas masks, and headgear.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_backpack"><text>Outfits - Backpacks</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_backpack_desc"><text>Backpacks that increase carry weight.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_attach"><text>Belt - General</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_attach_desc"><text>Belt-slot attachments like containers and pouches.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_arty"><text>Artifacts - Active</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_arty_desc"><text>Artifacts with active properties that can be equipped on belt.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_arty_junk"><text>Artifacts - Junk</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_arty_junk_desc"><text>Low-value artifacts with negligible properties, mainly for selling.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_arty_cont"><text>Artifacts - Containers</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_arty_cont_desc"><text>Lead-lined containers for safe artifact storage and transport.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_device"><text>Equipment - Devices</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_device_desc"><text>Electronic devices: detectors, PDAs, headlamps, binoculars, etc.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_tool"><text>Equipment - Tools</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_tool_desc"><text>Multitools, knives, matches, bolts, and other field tools.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_repair"><text>Equipment - Repair Kits</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_repair_desc"><text>Weapon and armor repair kits, cleaning kits, sewing kits, glue, etc.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_kit"><text>Equipment - Kits</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_kit_desc"><text>Technician toolkits, crafting kits (gunsmithing, drug-making), cooking gear, tents, and sleeping bags.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_medical"><text>Consumables - Medical</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_medical_desc"><text>Medkits, bandages, stimpacks, drugs, and anti-radiation medicine.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_food"><text>Consumables - Food</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_food_desc"><text>Canned goods, bread, MREs, chocolate, and other solid food.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_drink"><text>Consumables - Drinks</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_drink_desc"><text>Water, tea, coffee, energy drinks, vodka, and beer.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_mutant_cooked"><text>Consumables - Cooked Mutant</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_mutant_cooked_desc"><text>Prepared mutant meat: zone-cooked, stewed, or purified.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_tobacco"><text>Consumables - Tobacco</text></string>
+	<string id="ui_mcm_SortingPlus_ko_tobacco_desc"><text>Cigarettes, cigars, and loose tobacco products.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_letter"><text>Quest - Notes</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_letter_desc"><text>Letters, documents, and readable notes.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_quest"><text>Quest - Items</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_quest_desc"><text>Quest-related items, including technician toolkits (Basic/Advanced/Expert).</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_ammo"><text>Ammo - Ammunition</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_ammo_desc"><text>All firearm ammunition: pistol, rifle, shotgun rounds, etc.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_ammo_parts"><text>Ammo - Components</text></string>
+	<string id="ui_mcm_SortingPlus_ko_w_ammo_parts_desc"><text>Ammo crafting components: bullets, casings, and gunpowder.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_mutant_belt"><text>Mutant Loot - Belt Items</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_mutant_belt_desc"><text>Mutant parts equippable on belt (tails, claws, etc.).</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_mutant_part"><text>Mutant Loot - Parts</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_mutant_part_desc"><text>Mutant body parts for trading or crafting (eyes, jaws, pelts, etc.).</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_mutant_raw"><text>Mutant Loot - Raw Meat</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_mutant_raw_desc"><text>Uncooked mutant meat, needs cooking before consumption.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_misc"><text>Miscellaneous - Items</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_misc_desc"><text>Gun oil, broken electronics, rope, scrap clothing, and other salvageable odds and ends.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_faction_patch"><text>Miscellaneous - Faction Patches</text></string>
+	<string id="ui_mcm_SortingPlus_ko_faction_patch_desc"><text>Collectible faction insignia patches.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_upgrade"><text>Upgrades</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_upgrade_desc"><text>Weapon and armor upgrade kits installed by technicians.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_part_w"><text>Parts - Weapon</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_part_w_desc"><text>Weapon-specific spare parts: barrels, receivers, springs, etc.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_part_o"><text>Parts - Armor</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_part_o_desc"><text>Armor-specific spare parts: plates, padding, servos, etc.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_part"><text>Parts - General</text></string>
+	<string id="ui_mcm_SortingPlus_ko_i_part_desc"><text>General-purpose parts: capacitors, resistors, copper wire, fasteners, scrap metal, etc.</text></string>
+	<string id="ui_mcm_SortingPlus_ko_junk"><text>Junk</text></string>
+	<string id="ui_mcm_SortingPlus_ko_junk_desc"><text>Items marked as junk via keybind or right-click.</text></string>
 </string_table>

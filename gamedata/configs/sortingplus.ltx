@@ -1,47 +1,51 @@
-
 ;Change this table to change how things are sorted when not using AMCM or when "Use sortingplus.ltx" is checked in the AMCM menu.
 
 [item_kind_order]
 favorites           = -2 ;custom category items set to via key bind
 loadout				= -1 ;support for ARM
 mags				= 0  ;support for ARM
-w_sniper            = 1 
-w_rifle             = 1 
-w_smg               = 1
-w_shotgun           = 1 
-w_pistol            = 1 
-w_melee             = 1
-w_misc              = 1
-w_base              = 1
-w_explosive         = 1
-o_heavy             = 2 
-o_sci               = 2 
-o_medium            = 2 
-o_light             = 2 
-o_helmet            = 2
-i_arty              = 3
-i_arty_junk         = 3
-i_arty_cont         = 3
-i_device            = 4
-i_tool              = 5
-i_repair            = 5
-i_kit               = 5
-i_backpack          = 5
-i_medical           = 6
-i_food              = 7
-i_drink             = 7
-i_mutant_cooked     = 7
-i_mutant_raw        = 7
-i_letter            = 8
-i_quest             = 8
-w_ammo              = 9
-i_mutant_belt       = 10
-i_mutant_part       = 10
-i_misc              = 11
-i_upgrade           = 12
-i_part              = 13
-faction_patch       = 14
-junk                = 100 ;custom category items set to via key bind
+i_medical           = 1.1
+tobacco             = 1.2
+i_drink             = 1.3
+i_food              = 1.4
+i_mutant_cooked     = 1.5
+i_attach            = 2.1
+i_mutant_belt       = 2.2
+i_arty              = 2.3
+i_arty_cont         = 2.4
+i_arty_junk         = 2.5
+i_device            = 3
+i_repair            = 3.1
+i_tool              = 3.2
+i_misc              = 4
+w_sniper            = 4.1
+w_rifle             = 4.2
+w_smg               = 4.3
+w_shotgun           = 4.4
+w_pistol            = 4.5
+w_melee             = 4.6
+w_misc              = 5
+w_base              = 6
+w_explosive         = 6.1
+o_heavy             = 7
+o_medium            = 7
+o_sci               = 7
+o_light             = 7
+o_helmet            = 7
+i_backpack          = 7
+i_kit               = 7
+w_ammo              = 10
+i_mutant_part       = 11.1
+i_mutant_raw        = 11.2
+i_part_w            = 13.1
+i_part_o            = 13.2
+i_part              = 13.3
+w_ammo_parts        = 13.4
+i_upgrade           = 13.5
+i_letter            = 99
+i_quest             = 99
+faction_patch       = 999
+junk                = 1000 ;custom category items set to via key bind
 
 ;You can force some items to be sorted as a different "kind" so they are grouped together with other items with perceived similarity.
 ;Below are some opinionated defaults. If you add a brand new "kind" entry, (like "faction_patch") be sure to also add it to [item_kind_order] section above.
@@ -54,8 +58,6 @@ bad_psy_helmet      = i_device
 decoder             = i_device
 attackers_pda       = i_device
 contact_lost_pda    = i_device
-decryption_radio    = i_device
-zat_b40_sarge_pda   = i_device
 lead_box            = i_tool
 csky_patch          = faction_patch
 dolg_patch          = faction_patch
@@ -70,28 +72,451 @@ renegade_patch      = faction_patch
 isg_patch           = faction_patch
 greh_patch          = faction_patch
 af_misery_bread     = i_arty
+bullet_pistol       = w_ammo_parts
+bullet_pistol_ap    = w_ammo_parts
+bullet_r5           = w_ammo_parts
+bullet_r5_ap        = w_ammo_parts
+bullet_r7           = w_ammo_parts
+bullet_r7_ap        = w_ammo_parts
+bullet_shotgun      = w_ammo_parts
+bullet_shotgun_ap   = w_ammo_parts
+casing_p            = w_ammo_parts
+casing_r5           = w_ammo_parts
+casing_r7           = w_ammo_parts
+casing_s            = w_ammo_parts
+powder_1            = w_ammo_parts
+powder_2            = w_ammo_parts
+powder_3            = w_ammo_parts
+weapon_ammo_parts   = w_ammo_parts
+cigarettes          = tobacco
+cigarettes_lucky    = tobacco
+cigarettes_russian  = tobacco
+cigar               = tobacco
+cigar1              = tobacco
+cigar2              = tobacco
+cigar3              = tobacco
+tobacco             = tobacco
+hand_rolling_tobacco = tobacco
 
-; this section describes the catagories used in the second half of the AMCM menu. This section is for modders to add new item types added by 
-;		thier mod to the existing catagories or even add new ones. When adding new catagories you must make translation strings in 
-;		configs/text/eng and configs/text/rus see existing strings for formatting. The leading number is the default value, position in the list
-;		equates to position. NO WHITE SPACE!
-[sortingplusmcm]
-000favorites      = -2,favorites;custom category items set to via key bind
-001loadout		  = -1,loadout;support for ARM
-002mags		 	  = 0,mags;support for ARM
-010weapons        = 1,w_sniper,w_rifle,w_smg,w_shotgun,w_pistol,w_melee,w_misc,w_base,w_explosive
-020outfits        = 2,o_heavy,o_sci,o_medium,o_light,o_helmet,i_backpack
-030artifacts      = 3,i_arty,i_arty_junk,i_arty_cont
-040devices        = 4,i_device
-050tools          = 5,i_tool,i_repair,i_kit
-060medical        = 6,i_medical
-070foods          = 7,i_food,i_drink,i_drink
-080mutantfoods    = 7,i_mutant_cooked,i_mutant_raw
-090quest          = 8,i_quest
-100notes          = 8,i_letter
-110ammo           = 9,w_ammo
-120mutantparts    = 10,i_mutant_belt,i_mutant_part
-130misc           = 11,i_misc
-140upgrades       = 12,i_upgrade
-150parts          = 13,i_part
-999junk           = 100,junk;custom category items set to via key bind
+;Within-kind sort priority. Values encode kind group and position: kind_number * 100 + item_position.
+;Items not listed here get a default priority of 1000 and sort by size/name as before.
+[item_sort_priority]
+;Medical (i_medical) — kind 1
+;Wound care
+bandage             = 101
+jgut                = 102
+survival_kit        = 103
+;Medkits
+medkit              = 104
+medkit_army         = 105
+medkit_scientic     = 106
+;Stimpacks
+stimpack            = 107
+stimpack_army       = 108
+stimpack_scientic   = 109
+rebirth             = 110
+;Quick heals
+drug_coagulant      = 111
+akvatab             = 112
+yadylin             = 113
+tetanus             = 114
+;Stimulants
+caffeine            = 115
+drug_booster        = 116
+cocaine             = 117
+adrenalin           = 118
+;Healing shots
+glucose_s           = 119
+glucose             = 120
+;Pain relief
+analgetic           = 121
+salicidic_acid      = 122
+morphine            = 123
+;Anti-radiation
+drug_radioprotector = 124
+antirad_cystamine   = 125
+antirad_kalium      = 126
+antirad             = 127
+;Anti-toxin / infection
+drug_antidot        = 128
+antibio_sulfad      = 129
+antibio_chlor       = 130
+;Psy / recreational / sleep
+joint               = 131
+marijuana           = 132
+drug_sleepingpills  = 133
+antiemetic          = 134
+drug_psy_blockade   = 135
+drug_anabiotic      = 136
+;Packages (bottom)
+medkit_ai1          = 137
+medkit_ai2          = 138
+medkit_ai3          = 139
+
+;Tobacco — kind 2
+cigarettes_russian  = 201
+cigar1              = 202
+cigarettes          = 203
+cigarettes_lucky    = 204
+cigar2              = 205
+cigar3              = 206
+cigar               = 207
+tobacco             = 208
+hand_rolling_tobacco = 209
+
+;Drinks (i_drink) — kind 3
+tea                 = 301
+mineral_water       = 302
+flask               = 303
+water_drink         = 304
+energy_drink        = 305
+coffee_drink        = 306
+drink_crow          = 307
+brewed_coffee       = 308
+bottle_metal        = 309
+vodka_quality       = 310
+vodka2              = 311
+vodka               = 312
+beer                = 313
+ground_coffee       = 314
+
+;Food (i_food) — kind 4
+mre                 = 401
+ration_ru           = 402
+ration_ukr          = 403
+beans               = 404
+chili               = 405
+corn                = 406
+tomato              = 407
+tushonka            = 408
+conserva            = 409
+nuts                = 410
+raisins             = 411
+mint                = 412
+protein             = 413
+chocolate           = 414
+chocolate_p         = 415
+bread               = 416
+breadold            = 417
+kolbasa             = 418
+sausage             = 419
+salmon              = 420
+
+;Cooked mutant food (i_mutant_cooked) — kind 5
+meat_tushkano       = 501
+meat_tushkano_b     = 502
+meat_tushkano_a     = 503
+meat_dog            = 504
+meat_dog_b          = 505
+meat_dog_a          = 506
+meat_pseudodog      = 507
+meat_pseudodog_b    = 508
+meat_pseudodog_a    = 509
+meat_flesh          = 510
+meat_flesh_b        = 511
+meat_flesh_a        = 512
+meat_boar           = 513
+meat_boar_b         = 514
+meat_boar_a         = 515
+meat_bloodsucker    = 516
+meat_bloodsucker_b  = 517
+meat_bloodsucker_a  = 518
+meat_snork          = 519
+meat_snork_b        = 520
+meat_snork_a        = 521
+meat_chimera        = 522
+meat_chimera_b      = 523
+meat_chimera_a      = 524
+meat_lurker         = 525
+meat_lurker_b       = 526
+meat_lurker_a       = 527
+meat_psysucker      = 528
+meat_psysucker_b    = 529
+meat_psysucker_a    = 530
+
+;Repair (i_repair) — kind 6
+;Armor repair kits
+exo_repair_kit      = 601
+heavy_repair_kit    = 602
+medium_repair_kit   = 603
+light_repair_kit    = 604
+helmet_repair_kit   = 605
+;Field armor toolkit
+heavy_sewing_thread = 606
+sewing_thread       = 607
+;Glue
+glue_e              = 608
+glue_a              = 609
+glue_b              = 610
+;Emergency
+armor_repair_fa     = 611
+;Sewing kits
+sewing_kit_h        = 612
+sewing_kit_a        = 613
+sewing_kit_b        = 614
+;Weapon repair kits (A→D)
+toolkit_p           = 615
+toolkit_s           = 616
+toolkit_r5          = 617
+toolkit_r7          = 618
+;Cleaning kits (A→D, then Universal)
+cleaning_kit_p      = 619
+cleaning_kit_s      = 620
+cleaning_kit_r5     = 621
+cleaning_kit_r7     = 622
+cleaning_kit_u      = 623
+;Sharpening
+sharpening_stones   = 624
+
+;Tools (i_tool) — kind 7
+leatherman_tool     = 701
+grooming            = 702
+swiss_knife         = 703
+;Batteries
+batteries_dead      = 704
+batteries_exo       = 705
+;Fire
+box_matches         = 706
+matches             = 707
+;Money
+roubles             = 708
+;Bolts
+bolts_pack          = 709
+
+;Misc (i_misc) — kind 8
+;Waste
+rotten_meat         = 801
+;Fuel
+kerosene            = 802
+explo_jerrycan_fuel_empty = 803
+explo_balon_gas_empty    = 804
+;Magazines
+porn                = 805
+porn2               = 806
+;Shovels
+shovel_mili         = 807
+shovel_old          = 808
+;Hand tools
+rasp_tool           = 809
+ramrod_tool         = 810
+ball_hammer         = 811
+steel_wool          = 812
+;Gun maintenance
+gun_oil             = 813
+gun_oil_ru          = 814
+gun_oil_ru_d        = 815
+solvent             = 816
+grease              = 817
+;Tools
+duct_tape           = 818
+welding_goggles     = 819
+mirror              = 820
+cutlery             = 821
+;Small containers
+e_syringe           = 822
+jar                 = 823
+;Rope
+synthrope           = 824
+rope                = 825
+;Fabric / clothing
+tarpaulin           = 826
+beadspread          = 827
+underwear           = 828
+gloves              = 829
+boots               = 830
+;Empty containers
+explo_metalcan_powder    = 831
+;Broken electronics
+flashlight_broken   = 832
+headlamp            = 833
+broken_detector     = 834
+walkie              = 835
+radio               = 836
+radio2              = 837
+;Entertainment / valuables
+jewelry_box         = 838
+cards               = 839
+picture_woman       = 840
+meinkampf           = 841
+
+;Kits (i_kit) — kind 9
+;Artefact Melter
+itm_artefactskit    = 901
+;Tools (increasing intensity)
+itm_basickit        = 902
+itm_advancedkit     = 903
+itm_expertkit       = 904
+;Specialty craft tools
+itm_ammokit         = 905
+itm_drugkit         = 906
+;Cooking
+fieldcooker         = 907
+cooking             = 908
+army_bowler         = 909
+itm_campfire        = 910
+;Camping
+itm_sleepbag        = 911
+compression_bag     = 912
+itm_tent            = 913
+itm_tent_bag        = 914
+
+;Weapon parts (i_part_w) — kind 10
+;Barrels (rifle)
+prt_w_barrel_1      = 1001
+prt_w_barrel_2      = 1002
+prt_w_barrel_3      = 1003
+prt_w_barrel_4      = 1004
+prt_w_barrel_5      = 1005
+prt_w_barrel_6      = 1006
+prt_w_barrel_7      = 1007
+prt_w_barrel_8      = 1008
+prt_w_barrel_9      = 1009
+prt_w_barrel_10     = 1010
+prt_w_barrel_11     = 1011
+prt_w_barrel_12     = 1012
+prt_w_barrel_13     = 1013
+;Barrels (pistol)
+prt_w_p_barrel_1    = 1014
+prt_w_p_barrel_2    = 1015
+prt_w_p_barrel_3    = 1016
+prt_w_p_barrel_4    = 1017
+prt_w_p_barrel_5    = 1018
+prt_w_p_barrel_6    = 1019
+prt_w_p_barrel_7    = 1020
+;Bolts
+prt_w_bolt_1        = 1021
+prt_w_bolt_2        = 1022
+prt_w_bolt_3        = 1023
+prt_w_bolt_4        = 1024
+prt_w_bolt_5        = 1025
+prt_w_bolt_6        = 1026
+prt_w_bolt_7        = 1027
+prt_w_bolt_8        = 1028
+prt_w_bolt_9        = 1029
+prt_w_bolt_10       = 1030
+prt_w_bolt_11       = 1031
+prt_w_bolt_12       = 1032
+prt_w_bolt_13       = 1033
+prt_w_bolt_14       = 1034
+prt_w_bolt_15       = 1035
+prt_w_bolt_16       = 1036
+prt_w_bolt_17       = 1037
+;Bolt carriers
+prt_w_bolt_carrier_1  = 1041
+prt_w_bolt_carrier_2  = 1042
+prt_w_bolt_carrier_3  = 1043
+prt_w_bolt_carrier_4  = 1044
+prt_w_bolt_carrier_5  = 1045
+prt_w_bolt_carrier_6  = 1046
+prt_w_bolt_carrier_7  = 1047
+prt_w_bolt_carrier_8  = 1048
+prt_w_bolt_carrier_9  = 1049
+prt_w_bolt_carrier_10 = 1050
+prt_w_bolt_carrier_11 = 1051
+;Gas tubes
+prt_w_gas_tube_1    = 1061
+prt_w_gas_tube_2    = 1062
+prt_w_gas_tube_3    = 1063
+prt_w_gas_tube_4    = 1064
+prt_w_gas_tube_5    = 1065
+prt_w_gas_tube_6    = 1066
+prt_w_gas_tube_7    = 1067
+prt_w_gas_tube_8    = 1068
+prt_w_gas_tube_9    = 1069
+prt_w_gas_tube_10   = 1070
+prt_w_gas_tube_11   = 1071
+;Springs (pistol)
+prt_w_p_spring_1    = 1081
+prt_w_p_spring_2    = 1082
+prt_w_p_spring_3    = 1083
+prt_w_p_spring_4    = 1084
+prt_w_p_spring_5    = 1085
+prt_w_p_spring_6    = 1086
+;Triggers (pistol)
+prt_w_p_trigger_1   = 1091
+prt_w_p_trigger_2   = 1092
+prt_w_p_trigger_3   = 1093
+prt_w_p_trigger_4   = 1094
+;Trigger components
+prt_w_trigger_components_1 = 1101
+prt_w_trigger_components_2 = 1102
+prt_w_trigger_components_3 = 1103
+prt_w_trigger_components_4 = 1104
+prt_w_trigger_components_5 = 1105
+prt_w_trigger_components_6 = 1106
+
+;General parts (i_part) — kind 11
+prt_i_capacitors    = 1101
+prt_i_transistors   = 1102
+prt_i_resistors     = 1103
+prt_i_fasteners     = 1104
+prt_i_copper        = 1105
+prt_i_scrap         = 1106
+prt_i_wood          = 1107
+
+; Default sort order for every kind. Each kind gets its own MCM input.
+; Same number = same row. Decimal part = within-row priority (14.1 before 14.2).
+[sortingplus_kind_defaults]
+favorites           = -2
+loadout             = -1
+mags                = 0
+i_medical           = 1.1
+tobacco             = 1.2
+i_drink             = 1.3
+i_food              = 1.4
+i_mutant_cooked     = 1.5
+i_attach            = 2.1
+i_mutant_belt       = 2.2
+i_arty              = 2.3
+i_arty_cont         = 2.4
+i_arty_junk         = 2.5
+i_device            = 3
+i_repair            = 3.1
+i_tool              = 3.2
+i_misc              = 4
+w_sniper            = 4.1
+w_rifle             = 4.2
+w_smg               = 4.3
+w_shotgun           = 4.4
+w_pistol            = 4.5
+w_melee             = 4.6
+w_misc              = 5
+w_base              = 6
+w_explosive         = 6.1
+o_armor             = 7
+o_heavy             = 7
+o_medium            = 7
+o_sci               = 7
+o_light             = 7
+o_helmet            = 7
+i_backpack          = 7
+i_kit               = 7
+w_ammo              = 10
+i_mutant_part       = 11.1
+i_mutant_raw        = 11.2
+i_part_w            = 13.1
+i_part_o            = 13.2
+i_part              = 13.3
+w_ammo_parts        = 13.4
+i_upgrade           = 13.5
+i_letter            = 99
+i_quest             = 99
+faction_patch       = 999
+junk                = 1000
+
+; Display groups for MCM UI. Order of groups = display order.
+; Each line: group_id = kind1,kind2,...
+[sortingplus_kind_groups]
+grp_special     = favorites,loadout,mags
+grp_weapons     = w_sniper,w_rifle,w_smg,w_shotgun,w_pistol,w_melee,w_misc,w_base,w_explosive
+grp_outfits     = o_armor,o_heavy,o_medium,o_sci,o_light,o_helmet,i_backpack
+grp_belt        = i_attach,i_arty,i_arty_junk,i_arty_cont,i_mutant_belt
+grp_equipment   = i_device,i_tool,i_repair,i_kit
+grp_consumables = i_medical,i_food,i_drink,i_mutant_cooked,tobacco
+grp_quest       = i_letter,i_quest
+grp_ammo        = w_ammo
+grp_mutant      = i_mutant_part,i_mutant_raw
+grp_misc        = i_misc,faction_patch
+grp_upgrades    = i_upgrade
+grp_parts       = i_part_w,i_part_o,i_part,w_ammo_parts
+grp_junk        = junk

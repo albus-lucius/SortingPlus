@@ -1,0 +1,381 @@
+-- SortingPlus Keep Caps
+-- Per-item favorite keep limits for SortingPlus "Put All"
+-- Favorited items with a keep limit will have excess deposited during Put All.
+-- "Stock Up" button: inverse of Put All — fills favorites from container up to limits.
+
+local favorite_limits = {} -- favorite_limits[section] = number or nil (nil = keep all)
+local deposit_ids = {}
+local active_dialog = nil
+local active_section = nil
+
+-- ─── Helpers ──────────────────────────────────────────────
+
+local function detect_split(obj, sec)
+    if obj:is_ammo() then return "ammo", obj:ammo_get_count() end
+    if sec ~= "itm_artefactskit" and IsItem("multiuse", sec) then return "multiuse", obj:get_remaining_uses() end
+    return nil, 1
+end
+
+local function compare_by_quality(a, b)
+    if a.condition ~= b.condition then
+        return a.condition > b.condition
+    end
+    return a.units > b.units
+end
+
+-- ─── Save / Load ────────────────────────────────────────────
+
+local function save_state(mdata)
+    mdata.sp_favorite_limits = favorite_limits
+end
+
+local function load_state(mdata)
+    favorite_limits = mdata.sp_favorite_limits or mdata.mine_favorite_limits or {}
+end
+
+-- ─── Put All Override ───────────────────────────────────────
+-- Our script loads after SortingPlus (zzzz_ > zzz_), so this
+-- wraps SortingPlus's override which wraps the original.
+-- We read PUTALL directly from the MCM module during callbacks.
+
+local SP_LMode_PutAll = ui_inventory.UIInventory.LMode_PutAll
+
+function ui_inventory.UIInventory:LMode_PutAll()
+    deposit_ids = {}
+
+    -- Pre-scan: group favorited items by section (only limited sections)
+    local groups = {} -- groups[section] = list of {id, condition, units, split_type}
+    db.actor:iterate_inventory(function(owner, obj)
+        local sec = obj:section()
+        if not zzz_rax_sortingplus_mcm.is_favorite(sec) then return end
+        local limit = favorite_limits[sec]
+        if not limit then return end
+        if not groups[sec] then groups[sec] = {} end
+        local split_type, units = detect_split(obj, sec)
+        table.insert(groups[sec], {
+            id = obj:id(),
+            condition = obj:condition(),
+            units = units,
+            split_type = split_type,
+        })
+    end)
+
+    -- For each limited section, keep best items greedily
+    local splits = {} -- items to split: {id, section, keep_units, excess_units, split_type}
+    for sec, items in pairs(groups) do
+        local limit = favorite_limits[sec]
+        table.sort(items, compare_by_quality)
+        -- Accumulate units; once we hit the limit, mark the rest for deposit
+        local acc = 0
+        local satisfied = false
+        for i = 1, #items do
+            if satisfied then
+                deposit_ids[items[i].id] = true
+            else
+                local prev_acc = acc
+                acc = acc + items[i].units
+                if acc >= limit then
+                    satisfied = true
+                    local needed = limit - prev_acc
+                    if needed == 0 then
+                        -- Keep none of this item — deposit whole, no split needed
+                        deposit_ids[items[i].id] = true
+                    elseif needed < items[i].units and items[i].split_type then
+                        -- Item straddles the limit — deposit and record for splitting
+                        deposit_ids[items[i].id] = true
+                        splits[#splits + 1] = {
+                            id = items[i].id,
+                            section = sec,
+                            keep_units = needed,
+                            excess_units = items[i].units - needed,
+                            split_type = items[i].split_type,
+                        }
+                    end
+                end
+            end
+        end
+        -- If total units < limit, deposit nothing (keep all)
+    end
+
+    SP_LMode_PutAll(self)
+
+    -- Split border items: item was moved to container by Put All above.
+    -- Trim container copy to excess, create kept portion back on player.
+    -- If Put All's weight check blocked the move, item is still on player — skip split.
+    for _, s in ipairs(splits) do
+        local obj = level.object_by_id(s.id)
+        if obj and not db.actor:object(s.id) then
+            -- Item is in the container (move succeeded) — split it
+            if s.split_type == "ammo" then
+                obj:ammo_set_count(s.excess_units)
+                alife_create_item(s.section, db.actor, {ammo = s.keep_units})
+            else -- multiuse
+                obj:set_remaining_uses(s.excess_units)
+                alife_create_item(s.section, db.actor, {uses = s.keep_units})
+            end
+        end
+        -- If item is still on player (move was blocked), no split needed — keep all
+    end
+
+    deposit_ids = {}
+end
+
+function ActorMenu_on_item_before_move(flags, npc_id, obj, mode, bag)
+    if not zzz_rax_sortingplus_mcm.PUTALL then return end
+    if flags.ret_value then return end
+    -- Only override if the block came from SortingPlus's favorite check.
+    -- If an earlier callback (e.g. stash capacity) already blocked the move, respect it.
+    if not zzz_rax_sortingplus_mcm.get_pre_sp_ret() then return end
+    if deposit_ids[obj:id()] then
+        flags.ret_value = true -- allow deposit of this excess item
+    end
+end
+
+-- ─── Input Dialog ───────────────────────────────────────────
+
+class "UIKeepLimitDialog" (CUIScriptWnd)
+
+function UIKeepLimitDialog:__init() super()
+    self:SetWndRect(Frect():set(0, 0, 1024, 768))
+    self:SetAutoDelete(true)
+
+    local xml = CScriptXmlInit()
+    xml:ParseFile("ui_sp_keepcaps.xml")
+
+    self.dialog = xml:InitStatic("dialog", self)
+    xml:InitStatic("dialog:background", self.dialog)
+    xml:InitStatic("dialog:title", self.dialog)
+
+    self.input = xml:InitEditBox("dialog:input", self.dialog)
+    self:Register(self.input, "fld_input")
+
+    local btn
+    btn = xml:Init3tButton("dialog:btn_ok", self.dialog)
+    self:Register(btn, "btn_ok")
+
+    btn = xml:Init3tButton("dialog:btn_all", self.dialog)
+    self:Register(btn, "btn_all")
+
+    btn = xml:Init3tButton("dialog:btn_cancel", self.dialog)
+    self:Register(btn, "btn_cancel")
+
+    self:AddCallback("btn_ok", ui_events.BUTTON_CLICKED, self.OnOK, self)
+    self:AddCallback("btn_all", ui_events.BUTTON_CLICKED, self.OnAll, self)
+    self:AddCallback("btn_cancel", ui_events.BUTTON_CLICKED, self.OnCancel, self)
+end
+
+function UIKeepLimitDialog:Open(sec, current)
+    active_section = sec
+    if current then
+        self.input:SetText(tostring(current))
+    else
+        self.input:SetText("")
+    end
+    self:ShowDialog(true)
+end
+
+function UIKeepLimitDialog:OnOK()
+    local text = self.input:GetText()
+    local num = tonumber(text)
+    if num and num >= 0 then
+        favorite_limits[active_section] = math.floor(num)
+    elseif text == "" then
+        favorite_limits[active_section] = nil
+    end
+    self:Close()
+end
+
+function UIKeepLimitDialog:OnAll()
+    favorite_limits[active_section] = nil
+    self:Close()
+end
+
+function UIKeepLimitDialog:OnCancel()
+    self:Close()
+end
+
+function UIKeepLimitDialog:Close()
+    self:HideDialog()
+    active_dialog = nil
+    active_section = nil
+end
+
+function UIKeepLimitDialog:OnKeyboard(dik, keyboard_action)
+    local res = CUIScriptWnd.OnKeyboard(self, dik, keyboard_action)
+    if res == false then
+        if keyboard_action == ui_events.WINDOW_KEY_PRESSED then
+            if dik == DIK_keys.DIK_ESCAPE then
+                self:Close()
+            elseif dik == DIK_keys.DIK_RETURN then
+                self:OnOK()
+            end
+        end
+    end
+    return res
+end
+
+-- ─── Context Menu ───────────────────────────────────────────
+
+function limit_menu_string(obj)
+    local sec = obj:section()
+    local limit = favorite_limits[sec]
+    local label = game.translate_string("st_sp_keep_limit")
+    if limit then
+        return label .. ": " .. tostring(limit)
+    else
+        return label .. ": " .. game.translate_string("st_sp_keep_all")
+    end
+end
+
+function limit_menu_precond(obj, bag, mode)
+    if mode == "repair" then return false end
+    return zzz_rax_sortingplus_mcm.is_favorite(obj:section())
+end
+
+function limit_menu_action(obj)
+    local sec = obj:section()
+    active_dialog = UIKeepLimitDialog()
+    active_dialog:Open(sec, favorite_limits[sec])
+end
+
+-- ─── Stock Up Button ──────────────────────────────────────
+-- Monkey-patch InitControls to shrink Take All and add Stock Up beside it.
+
+local orig_InitControls = ui_inventory.UIInventory.InitControls
+function ui_inventory.UIInventory:InitControls()
+    orig_InitControls(self)
+    -- Shrink Take All to make room
+    self.npc_takeall:SetWndSize(vector2():set(90, 24))
+    -- Create Stock Up button from dialog XML (no texture, matching Take All style)
+    self.sp_stockup_xml = CScriptXmlInit()
+    self.sp_stockup_xml:ParseFile("ui_sp_keepcaps.xml")
+    self.sp_stockup = self.sp_stockup_xml:Init3tButton("stockup_button", self.npc_dialog)
+    self.sp_stockup:SetWndPos(vector2():set(105, 736))
+    self:Register(self.sp_stockup, "stock_up")
+end
+
+local orig_InitCallbacks = ui_inventory.UIInventory.InitCallbacks
+function ui_inventory.UIInventory:InitCallbacks()
+    orig_InitCallbacks(self)
+    self:AddCallback("stock_up", ui_events.BUTTON_CLICKED, self.LMode_StockUp, self)
+end
+
+local orig_Reset = ui_inventory.UIInventory.Reset
+function ui_inventory.UIInventory:Reset(obj)
+    orig_Reset(self, obj)
+    if self.sp_stockup then
+        self.sp_stockup:Show(self.mode == "loot" and self.npc_is_box)
+    end
+end
+
+-- ─── Stock Up Logic ───────────────────────────────────────
+-- Inverse of Put All: take favorited items from container to fill up to keep limits.
+
+function ui_inventory.UIInventory:LMode_StockUp()
+    local npc = self:GetPartner()
+    if not npc then return end
+
+    local cc = self.CC["npc_bag"]
+    if not cc then return end
+
+    -- Step 1: count player units for each favorited+limited section
+    local player_counts = {}
+    db.actor:iterate_inventory(function(owner, obj)
+        local sec = obj:section()
+        if not zzz_rax_sortingplus_mcm.is_favorite(sec) then return end
+        if not favorite_limits[sec] then return end
+        local _, units = detect_split(obj, sec)
+        player_counts[sec] = (player_counts[sec] or 0) + units
+    end)
+
+    -- Step 2: calculate deficits
+    local deficits = {}
+    for sec, limit in pairs(favorite_limits) do
+        if zzz_rax_sortingplus_mcm.is_favorite(sec) then
+            local have = player_counts[sec] or 0
+            if have < limit then
+                deficits[sec] = limit - have
+            end
+        end
+    end
+    if not next(deficits) then return end
+
+    -- Step 3: scan container for matching items
+    local container_items = {}
+    for id, idx in pairs(cc.indx_id) do
+        local obj = level.object_by_id(id)
+        if obj then
+            local sec = obj:section()
+            if deficits[sec] then
+                local split_type, units = detect_split(obj, sec)
+                if not container_items[sec] then container_items[sec] = {} end
+                table.insert(container_items[sec], {
+                    id = id,
+                    condition = obj:condition(),
+                    units = units,
+                    split_type = split_type,
+                })
+            end
+        end
+    end
+
+    -- Step 4: take items greedily, best condition first
+    for sec, items in pairs(container_items) do
+        local remaining = deficits[sec]
+        if remaining and remaining > 0 then
+            table.sort(items, compare_by_quality)
+            for _, item in ipairs(items) do
+                if remaining <= 0 then break end
+                local obj = level.object_by_id(item.id)
+                if obj and self:Cond_Move(obj, "npc_bag") then
+                    if item.units <= remaining then
+                        -- Take whole item
+                        self:Action_Move(obj, "npc_bag")
+                        remaining = remaining - item.units
+                    elseif item.split_type then
+                        -- Take whole, then split: keep needed on player, return remainder
+                        local take_units = remaining
+                        self:Action_Move(obj, "npc_bag")
+                        obj = level.object_by_id(item.id)
+                        if obj and db.actor:object(item.id) then
+                            -- Move succeeded (item is now on player) — split it
+                            if item.split_type == "ammo" then
+                                obj:ammo_set_count(take_units)
+                                alife_create_item(sec, npc, {ammo = item.units - take_units})
+                            else -- multiuse
+                                obj:set_remaining_uses(take_units)
+                                alife_create_item(sec, npc, {uses = item.units - take_units})
+                            end
+                        end
+                        remaining = 0
+                    else
+                        -- Non-splittable (units=1): take if deficit remains
+                        self:Action_Move(obj, "npc_bag")
+                        remaining = remaining - item.units
+                    end
+                end
+            end
+        end
+    end
+
+    self.update_info = true
+end
+
+-- ─── Getters / Setters ──────────────────────────────────────
+
+function get_limit(sec)
+    return favorite_limits[sec]
+end
+
+function set_limit(sec, val)
+    favorite_limits[sec] = val
+end
+
+-- ─── Init ───────────────────────────────────────────────────
+
+function on_game_start()
+    RegisterScriptCallback("save_state", save_state)
+    RegisterScriptCallback("load_state", load_state)
+    RegisterScriptCallback("ActorMenu_on_item_before_move", ActorMenu_on_item_before_move)
+    rax_dynamic_custom_functor.add_functor("sp_keep_limit", limit_menu_string, limit_menu_precond, limit_menu_action)
+end

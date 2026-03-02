@@ -1,0 +1,14 @@
+<string_table>
+
+	<string id="st_sp_keep_limit">
+		<text>Keep Limit</text>
+	</string>
+	<string id="st_sp_keep_all">
+		<text>All</text>
+	</string>
+
+	<string id="st_sp_stock_up">
+		<text>Stock Up</text>
+	</string>
+
+</string_table>
